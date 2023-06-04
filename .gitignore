@@ -6,6 +6,7 @@
 
 .env
 .toml
+Dockerfile
 
 # Logs
 logs
