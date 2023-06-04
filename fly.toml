@@ -1,0 +1,24 @@
+# fly.toml app configuration file generated for pokedex-nest on 2023-06-03T19:27:55-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "pokedex-nest"
+primary_region = "scl"
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = "80"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+
+
